@@ -10,6 +10,6 @@ class UniverseTest {
     }
 
     @Test fun `alive cell dies`() {
-        assertThat(Universe(Cell("X")).nextGeneration(), equalTo(Universe(Cell.dead())))
+        assertThat(Universe(Cell.alive()).nextGeneration(), equalTo(Universe(Cell.dead())))
     }
 }
