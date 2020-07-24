@@ -9,8 +9,12 @@ repositories {
     mavenCentral()
 }
 
+val junitVersion = "5.6.2"
+
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
 tasks {
