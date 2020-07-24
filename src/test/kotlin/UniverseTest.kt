@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test
 
 class UniverseTest {
     @Test fun `dead cell stays dead`() {
-        assertThat(Universe(Cell("O")).nextGeneration(), equalTo(Universe("O")))
+        assertThat(Universe(Cell("O")).nextGeneration(), equalTo(Universe(Cell("O"))))
     }
 
     @Test fun `alive cell dies`() {
-        assertThat(Universe("X").nextGeneration(), equalTo(Universe("O")))
+        assertThat(Universe(Cell("X")).nextGeneration(), equalTo(Universe(Cell("O"))))
     }
 }
