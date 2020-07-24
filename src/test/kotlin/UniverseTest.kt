@@ -8,4 +8,9 @@ class UniverseTest {
         val universe = Universe("O").nextGeneration()
         assertThat(universe, equalTo(Universe("O")))
     }
+
+    @Test fun `alive cell dies`() {
+        val universe = Universe("X").nextGeneration()
+        assertThat(universe, equalTo(Universe("O")))
+    }
 }
