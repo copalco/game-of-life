@@ -1,3 +1,5 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+
 plugins {
     kotlin("jvm") version "1.3.72"
 }
@@ -18,10 +20,18 @@ dependencies {
 }
 
 tasks {
+    withType<Test> {
+        useJUnitPlatform()
+        testLogging {
+            exceptionFormat = TestExceptionFormat.FULL
+            events("passed", "skipped", "failed")
+        }
+    }
+
     compileKotlin {
         kotlinOptions.jvmTarget = "1.8"
     }
     compileTestKotlin {
-        kotlinOptions.jvmTarget = "1.jq8"
+        kotlinOptions.jvmTarget = "1.8"
     }
 }
