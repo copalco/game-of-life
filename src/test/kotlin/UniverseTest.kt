@@ -1,10 +1,11 @@
+import com.natpryce.hamkrest.assertion.assertThat
+import com.natpryce.hamkrest.equalTo
 import gameoflife.Universe
-import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class UniverseTest {
     @Test fun `dead cell stays dead`() {
         val universe = Universe("O").nextGeneration()
-        assertEquals(universe, Universe("O"))
+        assertThat(universe, equalTo(Universe("O")))
     }
 }

@@ -17,6 +17,7 @@ val junitVersion = "5.6.2"
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testImplementation("com.natpryce:hamkrest:1.7.0.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
