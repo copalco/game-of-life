@@ -1,11 +1,11 @@
 package gameoflife
 
-data class Cell private constructor(private val state: State, private val column: Int) {
+data class Cell private constructor(private val state: State, private val column: Column) {
     companion object {
-        fun dead(column: Int) = Cell(State.DEAD, column)
-        fun alive(column: Int) = Cell(State.ALIVE, column)
-        fun dead(column: Column): Cell = dead(column.number)
-        fun alive(column: Column): Cell = alive(column.number)
+        fun dead(column: Int) = dead(Column(column))
+        fun alive(column: Int) = alive(Column(column))
+        fun dead(column: Column): Cell = Cell(State.DEAD, column)
+        fun alive(column: Column): Cell = Cell(State.ALIVE, column)
     }
 
     private enum class State { DEAD, ALIVE }
