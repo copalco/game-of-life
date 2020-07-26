@@ -10,7 +10,10 @@ data class Cell private constructor(private val state: State, private val column
 
     fun dead(): Cell = dead(column)
 
-    fun neighborsCoordinates(): List<Column> {
-        return emptyList()
+    fun neighborsCoordinates(universeSize: Int): List<Column> {
+        if (universeSize == 1) {
+            return emptyList()
+        }
+        return listOf(Column(2))
     }
 }

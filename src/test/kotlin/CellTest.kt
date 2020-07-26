@@ -30,6 +30,10 @@ class CellTest {
     }
 
     @Test fun `cell has no neighbors in universe with one cell`() {
-        assertThat(Cell.alive(Column(1)).neighborsCoordinates(), equalTo(emptyList()))
+        assertThat(Cell.alive(Column(1)).neighborsCoordinates(1), equalTo(emptyList()))
+    }
+
+    @Test fun `first cell has neighbour on the right in horizontal universe with at least two cells`() {
+        assertThat(Cell.alive(Column(1)).neighborsCoordinates(2), equalTo(listOf(Column(2))))
     }
 }
