@@ -8,7 +8,5 @@ data class Cell private constructor(private val state: State, private val column
 
     private enum class State { DEAD, ALIVE }
 
-    fun dead(): Cell {
-        return Cell.dead(column = this.column)
-    }
+    fun dead(): Cell = dead(column)
 }
