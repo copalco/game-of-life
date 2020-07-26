@@ -11,4 +11,8 @@ class CellTest {
     @Test fun `dead cell has column`() {
         assertThat(Cell.dead(column = 1), equalTo(Cell.dead(column = 1)))
     }
+
+    @Test fun `two dead cells with different columns differ`() {
+        assertThat(Cell.dead(column = 1), !equalTo(Cell.dead(column = 2)))
+    }
 }
