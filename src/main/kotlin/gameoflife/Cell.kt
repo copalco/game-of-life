@@ -5,6 +5,7 @@ data class Cell private constructor(private val state: State, private val column
         fun dead(column: Int) = Cell(State.DEAD, column)
         fun alive(column: Int) = Cell(State.ALIVE, column)
         fun dead(column: Column): Cell = dead(column.number)
+        fun alive(column: Column): Cell = alive(column.number)
     }
 
     private enum class State { DEAD, ALIVE }
