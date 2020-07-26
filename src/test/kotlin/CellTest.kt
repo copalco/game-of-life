@@ -14,26 +14,26 @@ class CellTest {
     }
 
     @Test fun `dead is not alive`() {
-        assertThat(Cell.dead(column = 1), !equalTo(Cell.alive(column = 1)))
+        assertThat(Cell.dead(Column(1)), !equalTo(Cell.alive(Column(1))))
     }
 
     @Test fun `two dead cells with the same column are the same`() {
-        assertThat(Cell.dead(column = 1), equalTo(Cell.dead(column = 1)))
+        assertThat(Cell.dead(Column(1)), equalTo(Cell.dead(Column(1))))
     }
 
     @Test fun `two dead cells with different columns differ`() {
-        assertThat(Cell.dead(column = 1), !equalTo(Cell.dead(column = 2)))
+        assertThat(Cell.dead(Column(1)), !equalTo(Cell.dead(Column(2))))
     }
 
     @Test fun `two alive cells with the same column are the same`() {
-        assertThat(Cell.alive(column = 1), equalTo(Cell.alive(column = 1)))
+        assertThat(Cell.alive(Column(1)), equalTo(Cell.alive(Column(1))))
     }
 
     @Test fun `two alive cells with different columns differ`() {
-        assertThat(Cell.alive(column = 1), !equalTo(Cell.alive(column = 2)))
+        assertThat(Cell.alive(Column(1)), !equalTo(Cell.alive(Column(2))))
     }
 
     @Test fun `alive cell can die`() {
-        assertThat(Cell.alive(column = 2).dead(), equalTo(Cell.dead(column = 2)))
+        assertThat(Cell.alive(Column(2)).dead(), equalTo(Cell.dead(Column(2))))
     }
 }
