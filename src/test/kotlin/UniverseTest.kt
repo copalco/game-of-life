@@ -15,8 +15,8 @@ class UniverseTest {
 
     @Test fun `two dead cells stay dead`() {
         assertThat(
-            Universe(Cell.dead(column = 1), Cell.dead(column = 1)).nextGeneration(),
-            equalTo(Universe(Cell.dead(column = 1), Cell.dead(column = 1)))
+            Universe(Cell.dead(column = 1), Cell.dead(column = 2)).nextGeneration(),
+            equalTo(Universe(Cell.dead(column = 1), Cell.dead(column = 2)))
         )
     }
 }
