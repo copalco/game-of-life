@@ -28,4 +28,8 @@ class CellTest {
     @Test fun `alive cell can die`() {
         assertThat(Cell.alive(Column(2)).dead(), equalTo(Cell.dead(Column(2))))
     }
+
+    @Test fun `cell has no neighbors in universe with one cell`() {
+        assertThat(Cell.alive(Column(1)).neighborsCoordinates(), equalTo(emptyList()))
+    }
 }

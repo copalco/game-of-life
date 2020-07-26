@@ -9,4 +9,8 @@ data class Cell private constructor(private val state: State, private val column
     private enum class State { DEAD, ALIVE }
 
     fun dead(): Cell = dead(column)
+
+    fun neighborsCoordinates(): List<Column> {
+        return emptyList()
+    }
 }
