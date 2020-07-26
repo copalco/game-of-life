@@ -23,4 +23,8 @@ class CellTest {
     @Test fun `two alive cells with different columns differ`() {
         assertThat(Cell.alive(column = 1), !equalTo(Cell.alive(column = 2)))
     }
+
+    @Test fun `alive cell can die`() {
+        assertThat(Cell.alive(column = 2).dead(), equalTo(Cell.dead(column = 2)))
+    }
 }
