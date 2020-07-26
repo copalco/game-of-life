@@ -2,6 +2,7 @@ import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.equalTo
 import gameoflife.Cell
 import gameoflife.Universe
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 
 class UniverseTest {
@@ -17,6 +18,14 @@ class UniverseTest {
         assertThat(
             Universe(Cell.dead(column = 1), Cell.dead(column = 2)).nextGeneration(),
             equalTo(Universe(Cell.dead(column = 1), Cell.dead(column = 2)))
+        )
+    }
+
+    @Disabled
+    @Test fun `a cell surrounded by two living cells survives in next generation`() {
+        assertThat(
+            Universe(Cell.alive(column = 1), Cell.alive(column = 2), Cell.alive(column = 3)).nextGeneration(),
+            equalTo(Universe(Cell.dead(column = 1), Cell.alive(column = 2), Cell.dead(column = 3)))
         )
     }
 }
