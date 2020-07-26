@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 
 class CellTest {
     @Test fun `dead is not alive`() {
-        assertThat(Cell.dead(), !equalTo(Cell.alive()))
+        assertThat(Cell.dead(column = 1), !equalTo(Cell.alive(column = 1)))
     }
 
     @Test fun `two dead cells with the same column are the same`() {
