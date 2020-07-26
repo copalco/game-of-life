@@ -8,7 +8,7 @@ class CellTest {
         assertThat(Cell.dead(), !equalTo(Cell.alive()))
     }
 
-    @Test fun `dead cell has column`() {
+    @Test fun `two dead cells with the same column are the same`() {
         assertThat(Cell.dead(column = 1), equalTo(Cell.dead(column = 1)))
     }
 
