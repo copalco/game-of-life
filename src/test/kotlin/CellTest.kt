@@ -1,9 +1,14 @@
 import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.equalTo
 import gameoflife.Cell
+import gameoflife.Column
 import org.junit.jupiter.api.Test
 
 class CellTest {
+    @Test fun `dead cell takes a column`() {
+        assertThat(Cell.dead(Column(1)), equalTo(Cell.dead(column = 1)))
+    }
+
     @Test fun `dead is not alive`() {
         assertThat(Cell.dead(column = 1), !equalTo(Cell.alive(column = 1)))
     }
