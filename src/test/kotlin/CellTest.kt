@@ -5,14 +5,6 @@ import gameoflife.Column
 import org.junit.jupiter.api.Test
 
 class CellTest {
-    @Test fun `dead cell takes a column`() {
-        assertThat(Cell.dead(Column(1)), equalTo(Cell.dead(column = 1)))
-    }
-
-    @Test fun `alive cell takes a column`() {
-        assertThat(Cell.alive(Column(1)), equalTo(Cell.alive(column = 1)))
-    }
-
     @Test fun `dead is not alive`() {
         assertThat(Cell.dead(Column(1)), !equalTo(Cell.alive(Column(1))))
     }
